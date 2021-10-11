@@ -1,6 +1,6 @@
 path: ../datasets/rgb
 train: images
-#val: images
+val: images #TODO: Split train and val
 
 nc: 1
 names: [ 'sheep' ]
