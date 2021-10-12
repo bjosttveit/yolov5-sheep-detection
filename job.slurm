@@ -6,8 +6,8 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --gres=gpu:V100:1
 #SBATCH --mem=16G
-#SBATCH --job-name="YOLO_TEST"
-#SBATCH --output=yolo.out
+#SBATCH --job-name="YOLO_RGB"
+#SBATCH --output=yolo-rgb.out
 #SBATCH --mail-user=bjornar.osttveit@ntnu.no
 #SBATCH --mail-type=ALL
 
