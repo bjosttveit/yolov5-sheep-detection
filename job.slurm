@@ -11,12 +11,12 @@
 #SBATCH --mail-user=bjornar.osttveit@ntnu.no
 #SBATCH --mail-type=ALL
 
-WORKDIR=${SLURM_SUBMIT_DIR}
-cd ${WORKDIR}
+
+cd ${SLURM_SUBMIT_DIR}/yolov5
 
 module purge
 module load Python/3.8.6-GCCcore-10.2.0
 
-cd yolov5
+pip3 install -r requirements.txt --user
 
 python3 train.py --img 640 --batch 16 --epochs 3 --data ../datasets/ir.yaml --weights yolov5s.pt
