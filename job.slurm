@@ -4,7 +4,7 @@
 #SBATCH --time=00:12:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --gres=gpu:V100:3
+#SBATCH --gres=gpu:V100:2
 #SBATCH --mem=32G
 #SBATCH --job-name="YOLO_TEST"
 #SBATCH --output=yolo.out
@@ -21,4 +21,4 @@ pip3 install -r requirements.txt --user
 pip3 install wandb --user
 
 #python3 train.py --img 640 --batch 64 --device 0 --epochs 100 --data ../datasets/ir.yaml --weights yolov5s.pt
-python3 -m torch.distributed.launch --nproc_per_node 3 train.py --batch 384 --device 0,1,2 --epochs 100 --data ../datasets/ir.yaml --weights yolov5s.pt
+python3 -m torch.distributed.launch --nproc_per_node 2 train.py --batch 256 --device 0,1 --epochs 100 --data ../datasets/ir.yaml --weights yolov5s.pt
