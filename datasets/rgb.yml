@@ -1,6 +1,6 @@
 path: ../datasets/rgb
-train: images
-val: images #TODO: Split train and val
+train: autosplit_train.txt
+val: autosplit_val.txt
 
 nc: 1
 names: [ 'sheep' ]
