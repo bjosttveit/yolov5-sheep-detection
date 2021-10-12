@@ -6,7 +6,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --gres=gpu:V100:2
 #SBATCH --cpus-per-task=24
-#SBATCH --mem=16G
+#SBATCH --mem=32G
 #SBATCH --job-name="YOLO_RGB"
 #SBATCH --output=yolo-rgb.out
 #SBATCH --mail-user=bjornar.osttveit@ntnu.no
