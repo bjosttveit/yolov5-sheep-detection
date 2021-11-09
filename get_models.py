@@ -16,6 +16,10 @@ runs = [
 if not os.path.exists('models'):
     os.makedirs('models')
 
-for run in runs:
-    api.run(f"bjosttveit/YOLOv5/{run['run']}").file("best.pt").download(root="./models", replace=True)
-    break
+files = api.run(f"bjosttveit/YOLOv5/{runs[0]['run']}").files()
+for f in files:
+    print(f)
+
+#for run in runs:
+#    api.run(f"bjosttveit/YOLOv5/{run['run']}").file("best.pt").download(root="./models", replace=True)
+#    break
