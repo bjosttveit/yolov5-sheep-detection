@@ -3,6 +3,7 @@
 
 *.out
 *.jpg
+*.png
 *.txt
 *.zip
 *.cache
