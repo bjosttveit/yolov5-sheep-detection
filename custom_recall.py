@@ -88,10 +88,6 @@ for i, pred in enumerate(preds):
 
 import matplotlib.pyplot as plt
 
-# print(conf_thres)
-# print(np.array([np.where(tp[:,i] > 0, 1, 0) for i in range(tp.shape[1])]).sum(axis=1) / len(preds))
-# print(fp.sum(axis=0) / len(preds))
-
 images_containing_sheep = np.where(label_count > 0, 1, 0).sum()
 
 least_one_tp = np.array(
