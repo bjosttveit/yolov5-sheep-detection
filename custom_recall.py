@@ -118,7 +118,7 @@ ax.grid()
 ax2.set_xlim(0, 1)
 
 ax.set_xlabel("Confidence threshold")
-ax.set_ylabel("True positives ≥ 1 (%)")
+ax.set_ylabel("True positives ≥ 1 (% of images)")
 ax2.set_ylabel("False positive count")
 
 ax.legend(
