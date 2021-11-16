@@ -1,7 +1,7 @@
 #!/bin/sh
 #SBATCH --partition=GPUQ
 #SBATCH --account=ie-idi
-#SBATCH --time=18:00:00
+#SBATCH --time=22:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --gres=gpu:V100:2
@@ -22,4 +22,4 @@ pip3 install -r requirements.txt --user -q
 pip3 install wandb --user -q
 
 #python3 train.py --batch 64 --device 0 --epochs 300 --data ../datasets/rgb.yaml --weights yolov5s6.pt --img 1280
-python3 -m torch.distributed.launch --nproc_per_node=2 train.py --batch 64 --device 0,1 --workers 16 --epochs 1000 --data ../datasets/rgb.yaml --weights yolov5s6.pt --img 1280
+python3 -m torch.distributed.launch --nproc_per_node=2 train.py --batch 48 --device 0,1 --workers 16 --epochs 1000 --data ../datasets/rgb.yaml --weights yolov5s6.pt --img 1280
