@@ -22,4 +22,4 @@ pip3 install -r requirements.txt --user -q
 pip3 install wandb --user -q
 
 #python3 train.py --batch 64 --device 0 --epochs 300 --data ../datasets/rgb.yaml --weights yolov5x6.pt --img 1280
-python3 -m torch.distributed.launch --nproc_per_node=2 train.py --batch 24 --device 0,1 --workers 16 --epochs 1000 --data ../datasets/rgb.yaml --weights yolov5x6.pt --img 1280
+python3 -m torch.distributed.launch --nproc_per_node=2 train.py --batch 12 --device 0,1 --workers 16 --epochs 1000 --data ../datasets/rgb.yaml --weights yolov5x6.pt --img 1280
