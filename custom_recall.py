@@ -92,9 +92,12 @@ import matplotlib.pyplot as plt
 # print(np.array([np.where(tp[:,i] > 0, 1, 0) for i in range(tp.shape[1])]).sum(axis=1) / len(preds))
 # print(fp.sum(axis=0) / len(preds))
 
+images_containing_sheep = np.where(label_count > 0, 1, 0).sum()
+
 least_one_tp = np.array(
     [np.where(tp[:, i] > 0, 1, 0) for i in range(tp.shape[1])]
-).mean(axis=1)
+).sum(axis=1) / images_containing_sheep
+
 avg_fp = fp.mean(axis=0)
 
 fig, ax = plt.subplots(figsize=(8,5))
