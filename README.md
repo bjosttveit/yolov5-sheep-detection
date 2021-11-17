@@ -2,7 +2,7 @@ Using YOLOv5: <https://github.com/ultralytics/yolov5>
 # Sheep detection with YOLOv5 🚀 🐑
 Project at NTNU detecting sheep in drone images.
 
-<img width="666" alt="bilde" src="https://user-images.githubusercontent.com/47412359/142167255-062beae0-410e-4224-8352-b6488e33b2dc.png">
+<img width="631" alt="bilde" src="https://user-images.githubusercontent.com/47412359/142168002-cf514e42-321c-45d4-b818-ec9d233f40e5.png">
 
 ## 👩🏻‍🎓 Dependencies
 - Kaggle: `pip3 install kaggle` (follow official instructions for authentication)
