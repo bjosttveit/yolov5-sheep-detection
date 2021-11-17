@@ -13,7 +13,7 @@ runs = [
     {"artifact": "run_2octyttq_model:v0", "model": "RGB-l"},
     {"artifact": "run_3kidhd8s_model:v0", "model": "RGB-l6"},
     {"artifact": "run_38emofsu_model:v0", "model": "RGB-x"},
-    {"artifact": "run_11za3mgs_model:v0", "model": "RGB-x6"},
+    #{"artifact": "run_[ID]_model:v0", "model": "RGB-x6"},
 ]
 
 if not os.path.exists('models'):
