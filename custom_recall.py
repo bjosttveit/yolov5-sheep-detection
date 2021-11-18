@@ -5,6 +5,8 @@ import numpy as np
 model = sys.argv[1]
 
 MIN_IOU = 0.5
+n_steps = 200
+tick_step = 0.1
 
 # Label is in format [x_center, y_center, width, height]
 def label2bbox(label):
@@ -46,7 +48,7 @@ labelDir = "./datasets/rgb/labels"
 preds = os.listdir(predDir)
 
 label_count = np.zeros(len(preds))
-conf_thres = np.linspace(0.05, 1, 20)
+conf_thres = np.linspace(1/n_steps, 1, n_steps)
 tp = np.zeros((len(preds), len(conf_thres)))
 fp = np.zeros((len(preds), len(conf_thres)))
 
@@ -87,6 +89,7 @@ for i, pred in enumerate(preds):
                         break
 
 import matplotlib.pyplot as plt
+from matplotlib.ticker import ScalarFormatter
 
 images_containing_sheep = np.where(label_count > 0, 1, 0).sum()
 
@@ -102,16 +105,22 @@ ax2 = ax.twinx()
 (line,) = ax.plot(
     conf_thres,
     least_one_tp,
+    linewidth=3,
 )
-bar = ax2.bar(conf_thres, avg_fp, 0.04, color="orange")
+bar = ax2.bar(conf_thres, avg_fp, 1/n_steps, color="orange")
 
+ticks = np.arange(0.0, 1.0, tick_step) + tick_step
+
+ax.set_zorder(ax2.get_zorder()+1)
+ax.set_facecolor("#00000000")
 ax.set_xlim(0, 1)
-ax.set_ylim(0, 1)
-ax.set_xticks(conf_thres[1::2])
-ax.set_yticks(conf_thres[1::2])
-ax.grid()
+ax.set_ylim(0, 1.05)
+ax.set_xticks(ticks)
+ax.set_yticks(ticks)
+#ax.grid()
 
 ax2.set_xlim(0, 1)
+ax2.set_ylim(0, 2*avg_fp[len(avg_fp)//2])
 
 ax.set_xlabel("Confidence threshold")
 ax.set_ylabel("True positives ≥ 1 (% of images)")
