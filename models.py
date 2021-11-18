@@ -20,5 +20,6 @@ if not os.path.exists('models'):
     os.makedirs('models')
 
 for run in runs:
+    print(f"Downloading {run['model']}...")
     api.artifact(f"YOLOv5/{run['artifact']}").download(root="./models")
     os.rename("models/best.pt", f"models/{run['model']}.pt")
