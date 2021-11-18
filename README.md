@@ -13,9 +13,13 @@ Project at NTNU detecting sheep in drone images.
 2. Install the necessary dependencies: `cd yolov5` & `pip3 install -r requirements.txt`.
 
 ## 🕵🏾‍♂️ Download the dataset
+Dataset can be found on kaggle: <https://www.kaggle.com/bjosttveit/sheep-uav-yolo>
+
 Run `./data.sh` to download the training data from kaggle.
 
 ## 👩🏼‍🏫 Download the models
+Models can be found on weights and biases: <https://wandb.ai/bjosttveit/YOLOv5>
+
 Run `python3 models.py` to download the custom models trained on the data.
 
 ## 👩🏻‍🔬 Test performance
